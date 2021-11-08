@@ -1,0 +1,33 @@
+<mat-tab-group mat-align-tabs="end">
+    <mat-tab label="Realizadas">
+        <div fxLayout='row wrap' fxLayoutAlign='start center' style='padding: 2%; display: flex;'>
+            <ng-container *ngFor="let atividade of atividadesConcluidas">
+                <mat-card class="example-card" style="width: 250px; margin: 5px;">
+                    <mat-card-header>
+                        <mat-card-title>{{atividade.descricao}}</mat-card-title>
+                        <mat-card-subtitle>Termino: {{atividade.data_termino}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-actions>
+                        <button mat-button (click)="excluirAtividade(atividade.id)">Excluir</button>
+                    </mat-card-actions>
+                </mat-card>
+            </ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="Não Realizadas">
+        <div fxLayout='row wrap' fxLayoutAlign='start center' style='padding: 2%; display: flex;'>
+            <ng-container *ngFor="let atividade of atividadesNaoConcluidas">
+                <mat-card class="example-card" style="width: 250px; margin: 5px;">
+                    <mat-card-header>
+                        <mat-card-title>{{atividade.descricao}}</mat-card-title>
+                        <mat-card-subtitle>Criação: {{atividade.data_criacao}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-actions>
+                        <button mat-button (click)="terminarAtividade(atividade.id)">Terminar</button>
+                        <button mat-button (click)="excluirAtividade(atividade.id)">Excluir</button>
+                    </mat-card-actions>
+                </mat-card>
+            </ng-container>
+        </div>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Nova Atividade</h1>
+<div mat-dialog-content>
+    <form [formGroup]="atividadeForm">
+        <mat-form-field appearance="legacy">
+            <mat-label>Descricao</mat-label>
+            <input matInput placeholder="Descricao" formControlName="descricao" name="descricao" >
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+</div>
